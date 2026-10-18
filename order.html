@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Order ahead (demo) | Fat Daddy's BBQ &amp; Steakhouse</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="demo-banner" role="note">
+    <strong>Demo &ndash; online ordering by SEK Sites</strong>
+    This is a demonstration. No orders are placed and no payment is taken.
+  </div>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Fat Daddy's BBQ<span class="long"> &amp; Steakhouse</span></a>
+      <nav class="nav" aria-label="Main"><a href="index.html">Back to home</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="order-app">
+    <div class="order-head">
+      <h1>Order ahead</h1>
+      <p class="muted">Pickup Wednesday to Saturday, 11:00am&ndash;9:00pm. Items marked "Price at pickup" are not included in the total. Call to confirm prices: <a href="tel:+19182974037">(918) 297-4037</a>.</p>
+    </div>
+
+    <ol class="stepper" aria-label="Order steps">
+      <li>Items</li>
+      <li>Pickup</li>
+      <li>Review</li>
+    </ol>
+
+    <section class="step" id="step-1">
+      <h2>Pick your items</h2>
+      <div id="order-items"></div>
+      <p class="error" id="err1" role="alert"></p>
+      <div class="total-bar">
+        <div><span class="label">Running total</span><output id="totalout"><span id="order-total">$0.00</span></output></div>
+        <button type="button" class="btn btn-primary" id="to-step2">Continue</button>
+      </div>
+    </section>
+
+    <section class="step" id="step-2" hidden>
+      <h2>Pickup time and details</h2>
+      <form id="details-form" class="card" novalidate>
+        <div class="row-2">
+          <div class="field">
+            <label for="pickup-day">Pickup day</label>
+            <select id="pickup-day"></select>
+          </div>
+          <div class="field">
+            <label for="pickup-time">Pickup time</label>
+            <select id="pickup-time"></select>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <label for="cust-name">Name</label>
+            <input id="cust-name" type="text" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="cust-phone">Phone</label>
+            <input id="cust-phone" type="tel" autocomplete="tel" inputmode="tel">
+          </div>
+        </div>
+        <p class="small muted">Your name and phone are not sent anywhere.</p>
+        <p class="error" id="err2" role="alert"></p>
+        <div class="btn-row">
+          <button type="button" class="btn btn-outline" id="back-1">Back</button>
+          <button type="submit" class="btn btn-primary">Review order</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="step" id="step-3" hidden>
+      <h2>Review your order</h2>
+      <div class="card">
+        <ul class="review-list" id="review-items"></ul>
+        <p><strong>Total: <span id="review-total"></span></strong></p>
+        <div class="review-meta">
+          <p><strong>Pickup:</strong> <span id="review-when"></span></p>
+          <p><strong>Name and phone:</strong> <span id="review-who"></span></p>
+        </div>
+        <p class="notice">Demo only. Nothing will be sent and no payment is taken.</p>
+        <div class="btn-row">
+          <button type="button" class="btn btn-outline" id="back-2">Back</button>
+          <button type="button" class="btn btn-primary" id="place-demo">Place demo order</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="confirmation" class="card" hidden>
+      <h2>Demo order complete</h2>
+      <p id="confirm-summary"></p>
+      <p class="notice">This was a demonstration by SEK Sites. No order was sent to Fat Daddy's and no payment was taken. To order, call <a href="tel:+19182974037">(918) 297-4037</a>.</p>
+      <div class="btn-row" style="justify-content:center">
+        <button type="button" class="btn btn-outline" id="restart">Start a new demo</button>
+        <a class="btn btn-primary" href="index.html">Back to home</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" style="margin-top:3rem">
+    <div class="wrap">Concept preview designed by SEK Sites &middot; <a href="https://seksites.com">seksites.com</a> &middot; Not affiliated with or published by Fat Daddy's BBQ &amp; Steakhouse</div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
